@@ -60,7 +60,15 @@ class Single_linkedlist:
                     return
                 else:
                     print("Node not found")
-
+    def rev(self):
+        temp=self.head
+        prev=None
+        while temp is not None:
+            front=temp.next
+            temp.next=prev
+            prev=temp
+            temp=front
+        self.head=prev    
 sll=Single_linkedlist()
 sll.append(10)
 sll.append(20)
@@ -71,6 +79,8 @@ sll.traverse()
 sll.deletion(40) 
 sll.traverse() 
 sll.deletion(60)
+sll.rev()
+sll.traverse()
                      
 
 
